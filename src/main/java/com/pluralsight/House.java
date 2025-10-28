@@ -47,10 +47,10 @@ public class House extends Asset {
 
     @Override
     public double getValue() {
-        double houseValue = this.squareFoot * .25;
+        double houseValue = this.squareFoot;
         switch (condition) {
             case 1:
-                houseValue += 180;
+                houseValue *= 180;
                 break;
             case 2:
                 houseValue += 130;
@@ -63,7 +63,7 @@ public class House extends Asset {
                 break;
         }
 
-        return houseValue;
+        return houseValue + (this.lotSize * .25);
     }
 
 
