@@ -14,12 +14,6 @@ public class House extends Asset {
         this.lotSize = lotSize;
     }
 
-    public House(String address, int condition, int squareFoot, int lotSize) {
-        this.address = address;
-        this.condition = condition;
-        this.squareFoot = squareFoot;
-        this.lotSize = lotSize;
-    }
 
     public String getAddress() {
         return address;
