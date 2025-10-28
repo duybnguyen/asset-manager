@@ -38,7 +38,22 @@ public class Vehicle extends Asset {
 
     @Override
     public double getValue() {
-        if this.year
+        double depreciatedTotal = this.getOriginalCost();
+        if (year > 10) {
+            depreciatedTotal = 1000;
+        }
+        else if (this.year > 6) {
+            depreciatedTotal -= (.08 * this.year);
+        } else if (this.year > 3) {
+            depreciatedTotal -= (.06 * this.year);
+        } else {
+            depreciatedTotal -= (.03 * this.year);
+        }
+
+        return this.odometer > 100000 && (!this.makeModel.contains("Honda") || !this.makeModel.contains("Toyota"))
+                ? depreciatedTotal *= .25
+                : depreciatedTotal;
+
     }
 
 
